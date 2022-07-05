@@ -1,0 +1,50 @@
+<div id="snake-head" style="left: 100px; top: 100px; border: dashed red; width: 20px; height: 20px;position: absolute"></div>
+<script>
+    console.log("start");
+    const snakeHead = document.getElementById("snake-head");
+    let x = parseInt(snakeHead.style['left']);
+    console.log(x);  
+    x = x + 200;  
+    snakeHead.style['left'] = x;
+
+    document.onkeydown = logKey;
+
+    function logKey(e) {
+        console.log('event:', e);
+        if (e.code == 'KeyS') {
+            let y = parseInt(snakeHead.style['top']);
+            console.log(y);
+            y = y + 10;
+            snakeHead.style['top'] = y;
+
+        }
+        if (e.code == 'KeyW') {
+            let y = parseInt(snakeHead.style['top']);
+            console.log(y);
+            y = y - 10;
+            snakeHead.style['top'] = y;
+        }
+        if (e.code == 'KeyA') {
+            let x = parseInt(snakeHead.style['left']);
+            console.log(x);
+            x = x - 10;
+            snakeHead.style['left'] = x;
+        }
+        if (e.code == 'KeyD') {
+            let x = parseInt(snakeHead.style['left']);
+            console.log(x);
+            x = x + 10;
+            snakeHead.style['left'] = x;
+        }
+    }
+    function snakeMove() {
+        logKey({ code: 'KeyD' });
+        //let x = parseInt(snakeHead.style['left']);
+        //console.log(x);
+        //x = x + 10;
+        //snakeHead.style['left'] = x;
+    }
+        
+    setInterval(snakeMove, 500);
+</script>
+
