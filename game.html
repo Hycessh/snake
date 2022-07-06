@@ -1,12 +1,15 @@
 <div id="snake-head" style="left: 100px; top: 100px; border: dashed red; width: 20px; height: 20px;position: absolute"></div>
 <script>
     console.log("start");
+    const GAME_AREA_WIDTH = window.innerWidth;
+    const GAME_AREA_HEIGHT = window.document.documentElement['clientHeight'];
+    const SNAKE_STEP = 10;
     const snakeHead = document.getElementById("snake-head");
-    let x = parseInt(snakeHead.style['left']);
-    console.log(x);  
-    x = x + 200;  
-    snakeHead.style['left'] = x;
-
+    function gameStart() {
+        snakeHead.style['left'] = GAME_AREA_WIDTH / 2;
+        snakeHead.style['top'] = GAME_AREA_HEIGHT / 2;
+    }
+    gameStart();
     document.onkeydown = logKey;
 
     function logKey(e) {
@@ -46,5 +49,6 @@
     }
         
     setInterval(snakeMove, 500);
+
 </script>
 
