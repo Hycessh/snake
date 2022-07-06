@@ -5,8 +5,11 @@
     const GAME_AREA_HEIGHT = window.document.documentElement['clientHeight'];
     const SNAKE_STEP = 10;
     const snakeHead = document.getElementById("snake-head");
-    snakeHead.style['left'] = GAME_AREA_WIDTH / 2;
-    snakeHead.style['top'] = GAME_AREA_HEIGHT / 2;
+    function gameStart() {
+        snakeHead.style['left'] = GAME_AREA_WIDTH / 2;
+        snakeHead.style['top'] = GAME_AREA_HEIGHT / 2;
+    }
+    gameStart();
     document.onkeydown = logKey;
 
     function logKey(e) {
